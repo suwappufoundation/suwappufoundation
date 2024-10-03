@@ -1,76 +1,130 @@
-suwappu whitepaper
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <!-- Contract Address will be on launch -->
-    
-    <title>Suwappu Whitepaper</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suwappu: Enter the Dark Forest</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #00ff00;
+            font-family: "Courier New", monospace;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .matrix-rain {
+            color: #00ff00;
+            font-size: 20px;
+            text-shadow: 0 0 5px #00ff00;
+            animation: matrix-rain 10s linear infinite;
+        }
+        @keyframes matrix-rain {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 1px solid #00ff00;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 0 10px #00ff00;
+        }
+        h1, h2 {
+            text-align: center;
+            text-shadow: 0 0 10px #00ff00;
+        }
+        a {
+            color: #00ff00;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        a:hover {
+            color: #fff;
+            text-shadow: 0 0 10px #00ff00;
+        }
+        .pill {
+            display: inline-block;
+            padding: 5px 15px;
+            margin: 5px;
+            border: 1px solid #00ff00;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .pill:hover {
+            background-color: #00ff00;
+            color: #000;
+        }
+        blockquote {
+            border-left: 3px solid #00ff00;
+            padding-left: 10px;
+            margin-left: 20px;
+            font-style: italic;
+        }
+    </style>
 </head>
-
 <body>
-    <header>
-        <h1>White paper for a new layer 1 </h1>
-        <aside>It is a dapp chain</aside>
-    </header>
+    <div class="matrix-bg">
+        <div class="matrix-rain">0101010101010101010101010101010101010101</div>
+    </div>
+    <div class="container">
+        <h1>Suwappu: A New Reality in DeFi</h1>
+        <h2>White Paper for a Revolutionary Layer 1</h2>
         
-        <h2>Vision</h2>
+        <h3>Vision</h3>
+        <p>Suwappu is not just a dapp chain. It's a paradigm shift in the digital realm, focusing on aggregating, swapping, lending, and building the largest stablecoin pools.</p>
         
-        <p> Suwappu is a new dapp chain that will be focusing on simply aggregating, swapping, lending, building the largest stablecoin pools. </p>
-        
+        <h3>The Dark Forest of DeFi Challenges</h3>
         <ul>
-            <li>Liquidity Fragmentation is increasing across chains</li>
-            <li>Bridge risk causes uncertainty with wrapping and unwrapping</li>
-            <li>Complex UI/Managing securing wallets diffuclt</li>
+            <li>Liquidity Fragmentation across chains</li>
+            <li>Bridge risk and uncertainty</li>
+            <li>Complex UI and wallet security issues</li>
             <li>High latency and network congestion</li>
-            <li>Limited cross chain functionality</li>
+            <li>Limited cross-chain functionality</li>
         </ul>
         
-        <h3>Building on top of the progress of defi primitives like UNI COMP AAVE and CURVE we a working on something new</h3>
+        <h3>Breaking Free from the Modularity</h3>
+        <p>Building on top of DeFi primitives like UNI, COMP, AAVE, and CURVE, Suwappu introduces:</p>
+        <div>
+            <span class="pill">Innovative liquidity aggregation</span>
+            <span class="pill">Move chain solution</span>
+            <span class="pill">Intuitive UI</span>
+            <span class="pill">Cross-chain interoperability</span>
+            <span class="pill">Entangled Rollups + zk Proofs</span>
+        </div>
         
-        <p>Suwappu is designed to overcome these limitations by introducing:</p>
+        <h3>The Architecture of Our Digital Reality</h3>
+        <p>Smart Contract Layer: The foundation of Suwappu's core functionality.</p>
+        <p>Dapp Chain Scaling: Utilizing ZKM's Entangled Rollup and MoveVM for unprecedented scalability.</p>
+        <p>Liquidity Aggregation: A novel protocol connecting through 1inch for EVM and beyond.</p>
         
-        <ul>
-            <li>An innovative liquidity aggregation mechanism </li>
-            <li>A move chain solution for high speed, low cost, and parralization</li>
-            <li>Intuitive user interface</li>
-            <li>Cross chain interoperability and modularity</li>
-            <li>Entangled Rollups + zk Proofs enable cross chain swaps natively securely and bridgeless</li>
-        </ul>
+        
+        <h3>Join the multi-party ceremony</h3>
 
-        <h3>Technical Architecture</h3>
+        <p>The choice is yours. Red pill to stay in the old chains, or green pill to enter Suwappu.</p>
 
-        <p>Smart Contract Layer</p>
-        <p> Suwappu core functionality is implemented through smart contracts that will handle the Order Matching, Liquidity pool managment, Token Swaps, and Governance Mechanisms</p>
-  
-                <blockquote cite="https://www.vitsoe.com/us/about/good-design">"Lets try something new and cool"<br>
-            - anon
-        </blockquote>
-      
+        <blockquote>"Let's try something new and cool" - anon</blockquote>
+        
+        <div style="text-align: center;">
+            <span class="pill" style="background-color: #ff0000; color: #fff;">Old Chain</span>
+            <span class="pill" style="background-color: #00ff00; color: #000;">New Chain</span>
+        </div>
+        
+        <p style="text-align: center; margin-top: 20px;">
+            <span style="background-color: #000; color: #00ff00; padding: 5px; border: 1px solid #00ff00;">Awakenings: 000042</span>
+        </p>
+    </div>
 </body>
 </html>
-
-
-        <p>Dapp Chain Scaling Solution</p>
-        <p>To address calability issues, Suwappu uses <ZKM class="IO"> ZKM's Entangeled Rollup plus the MoveVM</ZKM></p>
-        <ul>
-            <li>High transaction throughput by parralizaiton </li>
-            <li>Consensus will uses SUI moves sharkpool model </li>
-            <li> ZKM's money managers will act as channels for cross chain swaps enabling a bridgless and trustless model for native liquidity</li>
-            <li> Native account abstraction from protocol level will enable seedless and passphrase wallets while eliminating gas $USDC will be the native gas token</li>
-            
-        </ul>
-        <p>Liquidity Aggregation</p>
-        <p>Suwappu will introduce a novel liquidity aggregation protocol that</p>
-        <ul> 
-            <li>Connect thru 1inch for EVM Liquidity</li>
-            <li>Build connections thru non EVM liquidity first SOL,APTOS,SUI,Movement</li>
-            <li>Enable dark pools to minimize slippage for large trades</li>
-        </ul>
-
-        <p>Cross-Chain Bridgeless Swaps</p>
-        <p> Using ZK proofs, we can enable a novel interoperability model between blockchain networks regardless layer 1,2s, or EVM,SVM,MVM,etc</p>
-
