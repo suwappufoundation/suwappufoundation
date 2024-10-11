@@ -3,128 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suwappu: Enter the Dark Forest</title>
+    <title>Suwappu Terminal</title>
     <style>
-        body {
-            background-color: #000;
-            color: #00ff00;
-            font-family: "Courier New", monospace;
+        body, html {
             margin: 0;
             padding: 0;
-            overflow-x: hidden;
-        }
-        .matrix-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            overflow: hidden;
-            z-index: -1;
-        }
-        .matrix-rain {
+            height: 100%;
+            background-color: #000;
             color: #00ff00;
-            font-size: 20px;
-            text-shadow: 0 0 5px #00ff00;
-            animation: matrix-rain 10s linear infinite;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
         }
-        @keyframes matrix-rain {
-            0% { transform: translateY(-100%); }
-            100% { transform: translateY(100%); }
-        }
-        .container {
-            background-color: rgba(0, 0, 0, 0.8);
-            border: 1px solid #00ff00;
-            border-radius: 5px;
-            padding: 20px;
+        .terminal {
+            width: 90%;
+            max-width: 900px;
             margin: 20px auto;
-            max-width: 800px;
-            box-shadow: 0 0 10px #00ff00;
+            background-color: #000;
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
         }
-        h1, h2 {
-            text-align: center;
-            text-shadow: 0 0 10px #00ff00;
+        .terminal-header {
+            background-color: #00ff00;
+            color: #000;
+            padding: 5px 10px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
         }
-        a {
+        .terminal-body {
+            padding: 20px;
+            height: 80vh;
+            overflow-y: auto;
+        }
+        .prompt::before {
+            content: "$ ";
             color: #00ff00;
-            text-decoration: none;
-            transition: all 0.3s ease;
         }
-        a:hover {
-            color: #fff;
-            text-shadow: 0 0 10px #00ff00;
+        .command {
+            margin-bottom: 10px;
+        }
+        .output {
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+        }
+        h1, h2, h3 {
+            color: #00ff00;
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        ul li::before {
+            content: "> ";
+            color: #00ff00;
         }
         .pill {
             display: inline-block;
-            padding: 5px 15px;
-            margin: 5px;
+            padding: 2px 10px;
+            margin: 2px;
             border: 1px solid #00ff00;
             border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
         }
-        .pill:hover {
-            background-color: #00ff00;
-            color: #000;
+        .blink {
+            animation: blink 1s step-end infinite;
         }
-        blockquote {
-            border-left: 3px solid #00ff00;
-            padding-left: 10px;
-            margin-left: 20px;
-            font-style: italic;
+        @keyframes blink {
+            50% { opacity: 0; }
         }
     </style>
 </head>
 <body>
-    <div class="matrix-bg">
-        <div class="matrix-rain">0101010101010101010101010101010101010101</div>
-    </div>
-    <div class="container">
-        <h1>Suwappu: A New Reality in DeFi</h1>
-        <h2>White Paper for a Revolutionary Layer 1</h2>
-        
-        <h3>Vision</h3>
-        <p>Suwappu is not just a dapp chain. It's a paradigm shift in the digital realm, focusing on aggregating, swapping, lending, and building the largest stablecoin pools.</p>
-        
-        <h3>The Dark Forest of DeFi Challenges</h3>
-        <ul>
-            <li>Liquidity Fragmentation across chains</li>
-            <li>Bridge risk and uncertainty</li>
-            <li>Complex UI and wallet security issues</li>
-            <li>High latency and network congestion</li>
-            <li>Limited cross-chain functionality</li>
-        </ul>
-        
-        <h3>Breaking Free from the Modularity</h3>
-        <p>Building on top of DeFi primitives like UNI, COMP, AAVE, and CURVE, Suwappu introduces:</p>
-        <div>
-            <span class="pill">Innovative liquidity aggregation</span>
-            <span class="pill">Move chain solution</span>
-            <span class="pill">Intuitive UI</span>
-            <span class="pill">Cross-chain interoperability</span>
-            <span class="pill">Entangled Rollups + zk Proofs</span>
+    <div class="terminal">
+        <div class="terminal-header">
+            <span>suwappu_terminal</span>
+            <span>root@defi</span>
         </div>
-        
-        <h3>The Architecture of Our Digital Reality</h3>
-        <p>Smart Contract Layer: The foundation of Suwappu's core functionality.</p>
-        <p>Dapp Chain Scaling: Utilizing ZKM's Entangled Rollup and MoveVM for unprecedented scalability.</p>
-        <p>Liquidity Aggregation: A novel protocol connecting through 1inch for EVM and beyond.</p>
-        
-        
-        <h3>Join the multi-party ceremony</h3>
-
-        <p>The choice is yours. Red pill to stay in the old chains, or green pill to enter Suwappu.</p>
-
-        <blockquote>"Let's try something new and cool" - anon</blockquote>
-        
-        <div style="text-align: center;">
-            <span class="pill" style="background-color: #ff0000; color: #fff;">Old Chain</span>
-            <span class="pill" style="background-color: #00ff00; color: #000;">New Chain</span>
+        <div class="terminal-body" id="terminal-body">
+            <div class="command prompt">cat suwappu_whitepaper.txt</div>
+            <div class="output" id="output"></div>
+            <div class="command prompt"><span id="cursor" class="blink">█</span></div>
         </div>
-        
-        <p style="text-align: center; margin-top: 20px;">
-            <span style="background-color: #000; color: #00ff00; padding: 5px; border: 1px solid #00ff00;">Awakenings: 000042</span>
-        </p>
     </div>
+
+    <script>
+        const content = `Suwappu: A New Reality in DeFi
+White Paper for a Revolutionary Layer 1
+
+Vision:
+Suwappu is a paradigm shift in the digital realm, focusing on aggregating, swapping, lending, and building the largest stablecoin pools.
+
+The DeFi Challenges:
+> Liquidity Fragmentation across chains
+> Bridge risk and uncertainty
+> Complex UI and wallet security issues
+> High latency and network congestion
+> Limited cross-chain functionality
+
+Breaking Free from the System:
+Building on top of DeFi primitives like UNI, COMP, AAVE, and CURVE, Suwappu introduces:
+[Innovative liquidity aggregation] [Move chain solution] [Intuitive UI] [Cross-chain interoperability] [Entangled Rollups + zk Proofs]
+
+The Architecture of Our Digital Reality:
+- Smart Contract Layer: The foundation of Suwappu's core functionality.
+- Dapp Chain Scaling: Utilizing ZKM's Entangled Rollup and MoveVM for unprecedented scalability.
+- Liquidity Aggregation: A novel protocol connecting through 1inch for EVM and beyond.
+
+"Let's try something new and cool" - anon
+
+Choose your path: [S]tay or [J]oin Suwappu
+`;
+
+        const output = document.getElementById('output');
+        const cursor = document.getElementById('cursor');
+        let i = 0;
+
+        function typeWriter() {
+            if (i < content.length) {
+                output.innerHTML += content.charAt(i);
+                i++;
+                window.scrollTo(0, document.body.scrollHeight);
+                setTimeout(typeWriter, Math.random() * 50 + 10);
+            } else {
+                cursor.style.display = 'inline-block';
+            }
+        }
+
+        typeWriter();
+    </script>
 </body>
 </html>
