@@ -62,43 +62,9 @@
         a:hover {
             color: #ffffff;
         }
-
-        /* New Styles for Skip Button and Font Size */
-        .skip-btn {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background-color: #00ff00;
-            color: #000;
-            padding: 5px 10px;
-            border: none;
-            cursor: pointer;
-        }
-
-        .font-size-control {
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            background-color: #00ff00;
-            color: #000;
-            padding: 5px;
-            cursor: pointer;
-            font-size: 12px;
-        }
-        .cursor-custom {
-            cursor: url('custom_cursor.png'), auto; /* You can replace with an actual path */
-        }
     </style>
 </head>
-<body class="cursor-custom">
-    <button class="skip-btn" id="skip-btn">Skip</button>
-    
-    <!-- Font Size Adjusters -->
-    <div class="font-size-control">
-        <button id="increase-font">Increase Font</button>
-        <button id="decrease-font">Decrease Font</button>
-    </div>
-    
+<body>
     <div class="terminal">
         <div class="terminal-header">
             <span>suwappu_terminal</span>
@@ -112,7 +78,6 @@
     </div>
 
     <script>
-        // Content Typing Animation
         const content = `
  _____                                       
 /  ___|                                      
@@ -154,6 +119,16 @@ Suwappu introduces:
  │ interoperability       │ │ zk Proofs                     │
  └────────────────────────┘ └───────────────────────────────┘
 
+[The Architecture of Our Digital Reality]
+ • Smart Contract Layer: 
+   The foundation of Suwappu's core functionality.
+ • Dapp Chain Scaling: 
+   Utilizing ZKM's Entangled Rollup and MoveVM for unprecedented scalability.
+ • Liquidity Aggregation: 
+   A novel protocol connecting through 1inch for EVM and beyond.
+
+     "Let's try something new and cool" - anon
+
 [Choose your path]
    [S]tay with the old system
    [J]oin Suwappu and reshape DeFi
@@ -164,25 +139,6 @@ Suwappu introduces:
         const commandPrompt = document.getElementById('command-prompt');
         let i = 0;
 
-        // Font Size Adjuster
-        const body = document.body;
-        document.getElementById('increase-font').addEventListener('click', () => {
-            const currentFontSize = parseFloat(window.getComputedStyle(body, null).getPropertyValue('font-size'));
-            body.style.fontSize = (currentFontSize + 1) + 'px';
-        });
-        document.getElementById('decrease-font').addEventListener('click', () => {
-            const currentFontSize = parseFloat(window.getComputedStyle(body, null).getPropertyValue('font-size'));
-            body.style.fontSize = (currentFontSize - 1) + 'px';
-        });
-
-        // Skip Button to show full content
-        const skipBtn = document.getElementById('skip-btn');
-        skipBtn.addEventListener('click', () => {
-            output.innerHTML = content.replace(/\n/g, '<br>');
-            cursor.style.display = 'none';
-        });
-
-        // Typewriter function
         function typeWriter() {
             if (i < content.length) {
                 if (content.charAt(i) === '\n') {
@@ -199,7 +155,6 @@ Suwappu introduces:
             }
         }
 
-        // Keypress Functionality (J for Join, S for Stay)
         function handleKeyPress(event) {
             if (event.key.toLowerCase() === 'j') {
                 window.removeEventListener('keypress', handleKeyPress);
