@@ -17,7 +17,7 @@
         }
         .terminal {
             width: 95%;
-            max-width: 1000px;
+            max-width: 600px; /* Reduced max-width for smaller screens */
             margin: 20px auto;
             background-color: #000;
             border: 2px solid #00ff00;
@@ -35,7 +35,7 @@
         }
         .terminal-body {
             padding: 20px;
-            height: 80vh;
+            height: 70vh; /* Adjusted height for mobile screens */
             overflow-y: auto;
         }
         .prompt::before {
@@ -61,6 +61,27 @@
         }
         a:hover {
             color: #ffffff;
+        }
+
+        /* Media query for mobile screens */
+        @media (max-width: 600px) {
+            body, html {
+                font-size: 12px;
+            }
+            .terminal {
+                width: 100%;
+                max-width: 100%;
+                margin: 0;
+                border-radius: 0;
+            }
+            .terminal-header {
+                font-size: 14px;
+                padding: 8px;
+            }
+            .terminal-body {
+                padding: 10px;
+                height: 65vh;
+            }
         }
     </style>
 </head>
@@ -180,3 +201,4 @@ Suwappu introduces:
     </script>
 </body>
 </html>
+
