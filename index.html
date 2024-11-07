@@ -17,7 +17,7 @@
         }
         .terminal {
             width: 95%;
-            max-width: 600px; /* Reduced max-width for smaller screens */
+            max-width: 600px;
             margin: 20px auto;
             background-color: #000;
             border: 2px solid #00ff00;
@@ -35,8 +35,10 @@
         }
         .terminal-body {
             padding: 20px;
-            height: 70vh; /* Adjusted height for mobile screens */
+            height: 70vh;
             overflow-y: auto;
+            overflow-x: auto;
+            white-space: pre-wrap;
         }
         .prompt::before {
             content: "$ ";
@@ -47,7 +49,6 @@
         }
         .output {
             margin-bottom: 20px;
-            white-space: pre-wrap;
         }
         .blink {
             animation: blink 1s step-end infinite;
@@ -62,8 +63,6 @@
         a:hover {
             color: #ffffff;
         }
-
-        /* Media query for mobile screens */
         @media (max-width: 600px) {
             body, html {
                 font-size: 12px;
@@ -93,21 +92,14 @@
         </div>
         <div class="terminal-body" id="terminal-body">
             <div class="command prompt">cat suwappu_whitepaper.txt</div>
-            <div class="output" id="output"></div>
+            <div class="output" id="output">Fetching data...</div>
             <div class="command prompt" id="command-prompt"><span id="cursor" class="blink">█</span></div>
         </div>
     </div>
 
     <script>
+        const typingSound = new Audio('https://www.soundjay.com/button/beep-07.wav'); // Placeholder sound URL
         const content = `
- _____                                       
-/  ___|                                      
-\\ \`--.  _   _ __      __  __ _  _ __   _ __  _   _ 
- \`--. \\| | | |\\ \\ /\\ / / / _\` || '_ \\ | '_ \\| | | |
-/\\__/ /| |_| | \\ V  V / | (_| || |_) || |_) | |_| |
-\\____/  \\__,_|  \\_/\\_/   \\__,_|| .__/ | .__/ \\__,_|
-                                | |    | |         
-                                |_|    |_|         
 ===============================================
             A New Reality in DeFi
       White Paper for a Revolutionary Layer 1
@@ -121,6 +113,7 @@ Suwappu is a paradigm shift in the digital realm, focusing on:
  • Building the largest stablecoin pools
 
 [The DeFi Challenges]
+===============================================
  > Liquidity Fragmentation across chains
  > Bridge risk and uncertainty
  > Complex UI and wallet security issues
@@ -128,6 +121,7 @@ Suwappu is a paradigm shift in the digital realm, focusing on:
  > Limited cross-chain functionality
 
 [Breaking Free from the System]
+===============================================
 Building on top of DeFi primitives like UNI, COMP, AAVE, and CURVE, 
 Suwappu introduces:
 
@@ -139,16 +133,6 @@ Suwappu introduces:
  │ Cross-chain            │ │ Entangled Rollups +           │
  │ interoperability       │ │ zk Proofs                     │
  └────────────────────────┘ └───────────────────────────────┘
-
-[The Architecture of Our Digital Reality]
- • Smart Contract Layer: 
-   The foundation of Suwappu's core functionality.
- • Dapp Chain Scaling: 
-   Utilizing ZKM's Entangled Rollup and MoveVM for unprecedented scalability.
- • Liquidity Aggregation: 
-   A novel protocol connecting through 1inch for EVM and beyond.
-
-     "Let's try something new and cool" - anon
 
 [Choose your path]
    [S]tay with the old system
@@ -162,13 +146,14 @@ Suwappu introduces:
 
         function typeWriter() {
             if (i < content.length) {
+                typingSound.play();
                 if (content.charAt(i) === '\n') {
                     output.innerHTML += '<br>';
                 } else {
                     output.innerHTML += content.charAt(i);
                 }
                 i++;
-                window.scrollTo(0, document.body.scrollHeight);
+                document.getElementById('terminal-body').scrollTop = document.getElementById('terminal-body').scrollHeight;
                 setTimeout(typeWriter, Math.random() * 30 + 5);
             } else {
                 cursor.style.display = 'inline-block';
@@ -178,7 +163,7 @@ Suwappu introduces:
 
         function handleKeyPress(event) {
             if (event.key.toLowerCase() === 'j') {
-                window.removeEventListener('keypress', handleKeyPress);
+                highlightChoice('j');
                 commandPrompt.innerHTML = 'j';
                 setTimeout(() => {
                     output.innerHTML += '<br><br>Excellent choice! Welcome to the future of DeFi.<br><br>';
@@ -188,7 +173,7 @@ Suwappu introduces:
                     commandPrompt.innerHTML = '<span class="prompt"></span><span class="blink">█</span>';
                 }, 500);
             } else if (event.key.toLowerCase() === 's') {
-                window.removeEventListener('keypress', handleKeyPress);
+                highlightChoice('s');
                 commandPrompt.innerHTML = 's';
                 setTimeout(() => {
                     output.innerHTML += '<br><br>We understand. Change can be daunting. Feel free to return when you\'re ready to embrace the future of DeFi.<br><br>';
@@ -197,8 +182,14 @@ Suwappu introduces:
             }
         }
 
-        typeWriter();
+        function highlightChoice(choice) {
+            commandPrompt.innerHTML = `<span style="color: #ffffff; background: #00ff00; padding: 2px 4px;">${choice.toUpperCase()}</span>`;
+        }
+
+        setTimeout(() => {
+            output.innerHTML = '';
+            typeWriter();
+        }, 1000);
     </script>
 </body>
 </html>
-
