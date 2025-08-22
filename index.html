@@ -8,17 +8,23 @@
         body, html {
             margin: 0;
             padding: 0;
-            height: 100%;
+            min-height: 100vh;
             background-color: #000;
             color: #00ff00;
             font-family: 'Courier New', monospace;
             font-size: 14px;
             line-height: 1.2;
         }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+        }
         .terminal {
             width: 95%;
-            max-width: 600px; /* Reduced max-width for smaller screens */
-            margin: 20px auto;
+            max-width: 600px;
             background-color: #000;
             border: 2px solid #00ff00;
             border-radius: 10px;
@@ -35,7 +41,7 @@
         }
         .terminal-body {
             padding: 20px;
-            height: 70vh; /* Adjusted height for mobile screens */
+            height: 70vh;
             overflow-y: auto;
         }
         .prompt::before {
@@ -62,16 +68,38 @@
         a:hover {
             color: #ffffff;
         }
+        .widget-container {
+            background-color: #000;
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+        }
+        .widget-title {
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .veraswap-iframe {
+            border: 1px solid #00ff00;
+            border-radius: 8px;
+        }
 
         /* Media query for mobile screens */
         @media (max-width: 600px) {
             body, html {
                 font-size: 12px;
             }
+            .container {
+                padding: 10px;
+                gap: 15px;
+            }
             .terminal {
                 width: 100%;
                 max-width: 100%;
-                margin: 0;
                 border-radius: 0;
             }
             .terminal-header {
@@ -80,21 +108,42 @@
             }
             .terminal-body {
                 padding: 10px;
-                height: 65vh;
+                height: 60vh;
+            }
+            .widget-container {
+                width: 100%;
+                padding: 15px;
+            }
+            .veraswap-iframe {
+                width: 100% !important;
+                height: 400px !important;
             }
         }
     </style>
 </head>
 <body>
-    <div class="terminal">
-        <div class="terminal-header">
-            <span>suwappu_terminal</span>
-            <span>root@defi</span>
+    <div class="container">
+        <div class="terminal">
+            <div class="terminal-header">
+                <span>suwappu_terminal</span>
+                <span>root@defi</span>
+            </div>
+            <div class="terminal-body" id="terminal-body">
+                <div class="command prompt">cat suwappu_whitepaper.txt</div>
+                <div class="output" id="output"></div>
+                <div class="command prompt" id="command-prompt"><span id="cursor" class="blink">█</span></div>
+            </div>
         </div>
-        <div class="terminal-body" id="terminal-body">
-            <div class="command prompt">cat suwappu_whitepaper.txt</div>
-            <div class="output" id="output"></div>
-            <div class="command prompt" id="command-prompt"><span id="cursor" class="blink">█</span></div>
+
+        <div class="widget-container">
+            <div class="widget-title">// LIVE SWAP INTERFACE //</div>
+            <iframe
+                src="https://app.veraswap.io/embed?background=%23000000&mode=dark"
+                width="450"
+                height="450"
+                title="Veraswap Widget"
+                class="veraswap-iframe"
+            ></iframe>
         </div>
     </div>
 
@@ -201,4 +250,3 @@ Suwappu introduces:
     </script>
 </body>
 </html>
-
