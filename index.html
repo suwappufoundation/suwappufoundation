@@ -6,21 +6,21 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'unsafe-inline'; style-src 'unsafe-inline';">
     
     <!-- SEO -->
-    <title>Suwappu — A New Reality in DeFi</title>
-    <meta name="description" content="Suwappu is a revolutionary Layer 1 blockchain focusing on liquidity aggregation, swapping, lending, and building the largest stablecoin pools.">
-    <meta name="keywords" content="DeFi, blockchain, Layer 1, swap, liquidity, stablecoin, Suwappu">
-    
+    <title>Suwappu — Cross-Chain DEX Infrastructure for Humans and AI Agents</title>
+    <meta name="description" content="Suwappu is cross-chain DEX infrastructure: swap across 14 chains via Telegram, WhatsApp, Discord, web, or API — with first-class support for autonomous agents.">
+    <meta name="keywords" content="DeFi, cross-chain, swap, DEX, Telegram bot, AI agents, Suwappu">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Suwappu — A New Reality in DeFi">
-    <meta property="og:description" content="A revolutionary Layer 1 blockchain for liquidity aggregation, swapping, lending, and stablecoin pools.">
-    <meta property="og:url" content="https://suwappu.foundation">
-    
+    <meta property="og:title" content="Suwappu — Cross-Chain DEX Infrastructure for Humans and AI Agents">
+    <meta property="og:description" content="Swap across 14 chains via Telegram, WhatsApp, Discord, web, or programmatic API — with first-class support for autonomous agents (REST · MCP · A2A).">
+    <meta property="og:url" content="https://suwappu.bot">
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Suwappu — A New Reality in DeFi">
-    <meta name="twitter:description" content="A revolutionary Layer 1 blockchain for liquidity aggregation, swapping, lending, and stablecoin pools.">
-    
+    <meta name="twitter:title" content="Suwappu — Cross-Chain DEX Infrastructure for Humans and AI Agents">
+    <meta name="twitter:description" content="Swap across 14 chains via Telegram, WhatsApp, Discord, web, or programmatic API — with first-class support for autonomous agents (REST · MCP · A2A).">
+
     <style>
         *, *::before, *::after {
             box-sizing: border-box;
@@ -274,7 +274,7 @@
             text-align: center;
             margin-bottom: 15px;
         }
-        .veraswap-iframe {
+        .suwappu-widget {
             border: 1px solid #00ff00;
             border-radius: 8px;
         }
@@ -307,7 +307,7 @@
                 width: 100%;
                 padding: 15px;
             }
-            .veraswap-iframe {
+            .suwappu-widget {
                 width: 100% !important;
                 height: 400px !important;
             }
@@ -329,14 +329,13 @@
         </div>
 
         <div class="widget-container">
-            <div class="widget-title">// LIVE SWAP INTERFACE //</div>
-            <iframe
-                src="https://app.veraswap.io/embed?background=%23000000&mode=dark"
-                width="450"
-                height="450"
-                title="Veraswap Widget"
-                class="veraswap-iframe"
-            ></iframe>
+            <div class="widget-title">// LAUNCH SUWAPPU //</div>
+            <div class="suwappu-widget" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;text-align:center;padding:1.5rem;">
+                <p>Swap across 14 chains via Telegram, WhatsApp, Discord, web terminal, or programmatic API.</p>
+                <a href="https://suwappu.bot" target="_blank" rel="noopener noreferrer">suwappu.bot</a>
+                <a href="https://docs.suwappu.bot" target="_blank" rel="noopener noreferrer">docs.suwappu.bot</a>
+                <a href="https://www.npmjs.com/package/@suwappu/sdk" target="_blank" rel="noopener noreferrer">npm i @suwappu/sdk</a>
+            </div>
         </div>
     </div>
 
@@ -353,50 +352,43 @@
                                | |    | |         
                                |_|    |_|         
 ===============================================
-            A New Reality in DeFi
-      White Paper for a Revolutionary ZKVM Layer 1
+   Cross-Chain DEX Infrastructure for Humans
+             and AI Agents
 ===============================================
 
-[Vision]
-Suwappu is a paradigm shift in the digital realm, focusing on:
- • Aggregating
- • Swapping
- • Lending
- • Building the largest stablecoin pools
+[What it is]
+Suwappu lets you swap across 14 chains — 12 EVM + Solana + TRON — from
+wherever you already are:
+ • Telegram
+ • WhatsApp
+ • Discord
+ • Web terminal
+ • Mobile
 
-[The DeFi Challenges]
- > Liquidity Fragmentation across chains
- > Bridge risk and uncertainty
- > Complex UI and wallet security issues
- > High latency and network congestion
- > Limited cross-chain functionality
+[Under the hood]
+ > 10+ routed liquidity providers (CoW, Li.Fi, Socket, Jupiter, CCTP,
+   Across, Wormhole, LayerZero, CCIP)
+ > Non-custodial execution
+ > REST API with 50+ endpoints
 
-[Breaking Free from the System]
-Building on top of DeFi primitives like UNI, COMP, AAVE, and CURVE, 
-Suwappu introduces:
+[Built for agents, not just humans]
+Suwappu ships an agent-native surface alongside the consumer bot:
 
  ┌────────────────────────┐ ┌─────────────────┐ ┌─────────────┐
- │ Innovative liquidity   │ │ ZKVM chain      │ │ Intuitive   │
- │ aggregation            │ │ solution        │ │ UI          │
+ │ MCP server              │ │ A2A protocol    │ │ TS + Python │
+ │ (npx @suwappu/mcp-server)│ │                 │ │ SDKs        │
  └────────────────────────┘ └─────────────────┘ └─────────────┘
- ┌────────────────────────┐ ┌───────────────────────────────┐
- │ Cross-chain            │ │ Entangled Rollups +           │
- │ interoperability       │ │ zk Proofs                     │
- └────────────────────────┘ └───────────────────────────────┘
 
-[The Architecture of Our Digital Reality]
- • Smart Contract Layer: 
-   The foundation of Suwappu's core functionality.
- • Dapp Chain Scaling: 
-   Utilizing ZKM's Entangled Rollup and MoveVM for unprecedented scalability.
- • Liquidity Aggregation: 
-   A novel protocol connecting through 1inch for EVM and beyond.
-
-     "Let's try something new and cool" - anon
+[The product line]
+ • Suwappu — the free, consumer cross-chain swap bot.
+ • Suwappu Pro — perps, copy-trading, sniping, DCA, alerts, and the
+   full SDK surface for building automated strategies.
+ • Suwappu Enterprise — post-quantum cross-chain settlement, KYC/AML
+   screening, scoped API keys, audit logging, usage-based billing.
 
 [Choose your path]
-   [S]tay with the old system
-   [J]oin Suwappu and reshape DeFi
+   [S]tay and keep reading
+   [J]oin Suwappu
 `;
 
             // DOM elements
@@ -522,21 +514,21 @@ Suwappu introduces:
                 response.style.marginTop = '20px';
                 
                 if (choice === 'j') {
-                    const text1 = document.createTextNode('Excellent choice! Welcome to the future of DeFi.\n\nJoin our Telegram group to stay updated and connect with the Suwappu community:\n');
-                    
+                    const text1 = document.createTextNode('Welcome to Suwappu.\n\nStart swapping across 14 chains right now:\n');
+
                     const link = document.createElement('a');
-                    link.href = 'https://t.me/suwappucommunity';
+                    link.href = 'https://suwappu.bot';
                     link.target = '_blank';
                     link.rel = 'noopener noreferrer';
-                    link.textContent = 'https://t.me/suwappucommunity';
-                    
-                    const text2 = document.createTextNode('\n\nThank you for choosing Suwappu. Together, we will reshape the DeFi landscape!');
-                    
+                    link.textContent = 'https://suwappu.bot';
+
+                    const text2 = document.createTextNode('\n\nThanks for choosing Suwappu.');
+
                     response.appendChild(text1);
                     response.appendChild(link);
                     response.appendChild(text2);
                 } else {
-                    response.textContent = 'We understand. Change can be daunting. Feel free to return when you\'re ready to embrace the future of DeFi.';
+                    response.textContent = 'No problem — the terminal will be here when you\'re ready.';
                 }
                 
                 // Add response after output

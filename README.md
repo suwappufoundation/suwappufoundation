@@ -1,10 +1,10 @@
 # Suwappu Foundation
 
-A new way to swap — Suwappu is a revolutionary Layer 1 blockchain focusing on liquidity aggregation, swapping, lending, and building the largest stablecoin pools.
+A new way to swap — Suwappu is cross-chain DEX infrastructure for humans and AI agents, letting you swap across 14 chains via Telegram, WhatsApp, Discord, web, or programmatic API. See [suwappu.bot](https://suwappu.bot) and [docs.suwappu.bot](https://docs.suwappu.bot).
 
 ## Overview
 
-This repository contains the Suwappu Foundation landing page: a retro terminal-style single-page site that presents the whitepaper in a typewriter animation.
+This repository contains the Suwappu Foundation landing page: a retro terminal-style single-page site that presents an overview of the product in a typewriter animation.
 
 ### Features
 
@@ -93,10 +93,10 @@ All styles are in the `<style>` block. Key CSS variables to look for:
 
 ### Change the CTA Link
 
-Find the Telegram link in the `handleChoice` function and update the URL:
+Find the join link in the `handleChoice` function and update the URL:
 
 ```javascript
-link.href = 'https://t.me/suwappucommunity';
+link.href = 'https://suwappu.bot';
 ```
 
 ### Add Meta / Social Images
